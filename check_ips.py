@@ -151,15 +151,15 @@ def main():
 
     previous_ips = initial_messaging()
 
-    while True:
-        if CHECK_INTERVAL > 0:
-            log_message(f"Starting loop with CHECK_INTERVAL {CHECK_INTERVAL} seconds")
-            time.sleep(CHECK_INTERVAL)
-        else:
-            log_message(f"CHECK_INTERVAL was set to 0. exiting")
-            exit()
+    if CHECK_INTERVAL > 0:
+        log_message(f"Starting loop with CHECK_INTERVAL {CHECK_INTERVAL} seconds")
+    else:
+        log_message(f"CHECK_INTERVAL was set to 0. exiting")
+        exit()
 
-        #loop-start
+    while True:
+        time.sleep(CHECK_INTERVAL)
+        
         current_ips = fetch_ips()
 
         # Check for changes
