@@ -19,7 +19,7 @@ RUN pip install requests
 
 # Add the script to the container
 WORKDIR /app
-COPY check-ips.py .
+COPY check_ips.py .
 
 # Run the script
-CMD ["python", "-u", "/app/check-ips.py"]
+CMD ["python", "-u", "/app/check_ips.py"]
